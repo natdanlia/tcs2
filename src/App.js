@@ -3,8 +3,7 @@ import {connect} from 'react-redux'
 
 import { fetchData } from './actions/fetchData';
 import Room  from './room'
-import {Grid} from 'semantic-ui-react'
-import { Segment } from 'semantic-ui-react'
+import {Grid, Segment} from 'semantic-ui-react'
 
 class App extends Component {
 
@@ -19,7 +18,7 @@ class App extends Component {
     const sorted = this.props.data.sort((a, b) =>  a.id - b.id )
     return (
       <div>
-        <Grid >
+        <Grid>
           {sorted.map((room, idx) => <Grid.Column width='3'><Segment ><Room key={room.id} room={room} /></Segment></Grid.Column>)}
         </Grid>
       </div>
